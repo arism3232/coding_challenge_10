@@ -10,7 +10,7 @@ class Product {
         return `Product: ${this.name}, ID: ${this.id}, Price: $${this.price}, Stock: ${this.stock}`
     }; // Adding a method that returns a formatted string of product details.
     updateStock(quantity) {
-        this.stock -=quantity;
+        this.stock -= quantity;
     }; // Adding a method that modifies the stock level when an order is placed.
 };
 // Test Cases 
@@ -45,8 +45,8 @@ console.log(prod1.getDetails());
 // Task3- Creating an Inventory Class
 class Inventory {
     constructor() {
-        this.products = []
-        this.orders = []
+        this.products = [];
+        this.orders = [];
     }; // Creating a class with properties. 
     addProduct(product) {
         this.products.push(product)
