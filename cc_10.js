@@ -66,5 +66,22 @@ class Inventory {
         const newOrder = new Order(orderID, product, quantity);
         this.orders.push(newOrder)
     };
-    
-}
+    // Task5- Implementing Product Restocking
+    restockProduct(productID, quantity) {
+        const product = this.products.find(product => productID === productID);
+        product.stock += quantity;
+    };
+};
+// Test Cases
+const inventory = new Inventory();
+inventory.addProduct(prod1);
+inventory.listProducts();
+// Expected output: "Product: Laptop, ID: 101, Price: $1200, Stock: 5"
+inventory.placeOrder(601, prod1, 2);
+inventory.listOrders();
+// Expected output: "Order ID: 601, Product: Laptop, Quantity: 2, Total Price: $2400"
+console.log(prod1.getDetails());
+// Expected output: "Product: Laptop, ID: 101, Price: $1200, Stock: 3"
+inventory.restockProduct(101, 5);
+console.log(prod1.getDetails()); 
+// Expected output: "Product: Laptop, ID: 101, Price: $1200, Stock: 8"
