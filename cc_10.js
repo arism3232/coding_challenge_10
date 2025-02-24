@@ -56,5 +56,15 @@ class Inventory {
             console.log(product.getDetails())
         });
     };
+    // Task4- Implementing Order Management
+    listOrders() {
+        this.orders.forEach(order => {
+            console.log(order.getOrderDetails());
+        });
+    };
+    placeOrder(orderID, product, quantity) {
+        const newOrder = new Order(orderID, product, quantity);
+        this.orders.push(newOrder)
+    };
     
 }
